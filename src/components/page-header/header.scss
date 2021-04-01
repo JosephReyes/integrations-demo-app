@@ -1,0 +1,45 @@
+.user-email {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  display: block;
+  color: rgba(0, 0, 0, 0.87);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-bar-actions {
+  padding: 0.5rem 0rem;
+}
+
+.menu-item {
+  flex: 1;
+}
+
+.app-logo {
+  height: 21px;
+  pointer-events: none;
+}
+
+.drawer {
+  width: 32px;
+  top: 1rem;
+  z-index: 0;
+}
+
+.app-bar {
+  z-index: 1;
+}
+
+.root {
+  display: flex;
+}
+
+.MuiButtonBase-root {
+  margin-right: 1rem;
+}

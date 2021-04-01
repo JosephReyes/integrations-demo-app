@@ -1,0 +1,22 @@
+.page {
+  margin-left: 14rem;
+  margin-top: 4rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .info {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .info > * {
+    margin-bottom: 1rem;
+  }
+}
+
+.page-progress {
+  top: 4rem;
+}
