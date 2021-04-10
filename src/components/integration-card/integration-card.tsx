@@ -3,12 +3,12 @@ import { Card, CardActionArea, CardContent, Typography } from '@material-ui/core
 import './integration-card.scss';
 import { Link } from 'react-router-dom';
 
-export function IntegrationCard({ name, description }: { name: string; description: string }) {
+export function IntegrationCard({ id, name, description }: { id: string, name: string; description: string }) {
   return (
     <div>
       <CardActionArea className="card-area">
-        <Link to={`/${name}`} style={{ textDecoration: 'none' }}>
-          <Card className="card" variant="outlined">
+        <Link to={`integration/${id}`} style={{ textDecoration: 'none' }}>
+          <Card className="card" elevation={3}>
             <CardContent>
               <Typography variant="h3">{name}</Typography>
               <Typography className="card-body" variant="h5">

@@ -21,13 +21,13 @@ const INTEGRATIONS_QUERY = gql`
 `;
 
 export function IntegrationCards() {
-  const { loading, error, data } = useQuery(INTEGRATIONS_QUERY);
+  const { data } = useQuery(INTEGRATIONS_QUERY);
 
   if (data) {
     return (
       <div className="integrations">
         {data.integrations.map((integration: Integration) => (
-          <IntegrationCard key={integration.id} name={integration.name} description={integration.description} />
+          <IntegrationCard key={integration.id} id={integration.id} name={integration.name} description={integration.description} />
         ))}
       </div>
     );

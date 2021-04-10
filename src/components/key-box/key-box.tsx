@@ -6,14 +6,6 @@ import './key-box.scss';
 
 const bullet = String.fromCharCode(8226);
 
-const API_KEY_QUERY = gql`
-  query RetrieveCredentials {
-    credentials {
-      apiKey
-    }
-  }
-`;
-
 export function KeyBox() {
   const [showKey, setShowKey] = useState(false);
   const revealKey = () => setShowKey(true);
@@ -29,11 +21,17 @@ export function KeyBox() {
 }
 
 function ExposedKey() {
-  const { loading, data } = useQuery(API_KEY_QUERY);
-
-  console.log(data);
+  const [data, setData] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setData(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
+  
   if (data) {
-    return <Typography variant="body2">{data.credentials.apiKey}</Typography>;
+    return <Typography variant="body2">###some-random-key###</Typography>;
   } else {
     return <LinearProgress className="progress" color="primary" />;
   }

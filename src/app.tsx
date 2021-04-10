@@ -1,6 +1,5 @@
 import React from 'react';
 import './app.css';
-import { BrowserRouter } from 'react-router-dom';
 import { Router } from './router';
 import theme from './theme';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -8,10 +7,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Header } from './components/page-header/header';
-import { Album } from '@material-ui/icons';
+import { Wifi } from '@material-ui/icons';
 
 const httpLink = createHttpLink({
-  uri: 'https://z5vddreq5jbitmzm67quoovz2u.appsync-api.eu-west-2.amazonaws.com/graphql',
+  uri: 'https://u33rwodquja65b4wqaae2gmjpi.appsync-api.eu-west-2.amazonaws.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -19,7 +18,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      'x-api-key': 'da2-oau2ws32rjfz3ojbdgy5pllvbm',
+      'x-api-key': 'da2-zsnhp4yvajh3pkafinbcsuhn34',
     },
   };
 });
@@ -35,10 +34,8 @@ function App() {
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Header Logo={Album} />
-          <BrowserRouter>
-            <Router />
-          </BrowserRouter>
+          <Header Logo={Wifi} />
+          <Router />
         </ThemeProvider>
       </ApolloProvider>
     </div>

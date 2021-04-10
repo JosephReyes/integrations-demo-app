@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
 import { AttachMoney, ImportExport } from '@material-ui/icons';
 import { OverridableComponent } from "@material-ui/core/OverridableComponent";
@@ -30,20 +30,12 @@ export function Header({ Logo }: { Logo: OverridableComponent<SvgIconTypeMap<{},
       <Drawer className="drawer" variant="permanent">
         <Toolbar />
         <List className="list">
-          <ListItem button component={NavLink} to="/library">
+          <ListItem button component={Link} to="/library">
             <ListItemIcon>
               <AttachMoney />
             </ListItemIcon>
             <ListItemText>
-              <Typography variant="body2">Integrations</Typography>
-            </ListItemText>
-          </ListItem>
-          <ListItem button component={NavLink} to="/export-api">
-            <ListItemIcon>
-              <ImportExport />
-            </ListItemIcon>
-            <ListItemText>
-              <Typography variant="body2">Some API</Typography>
+              <Typography variant="body2">Library</Typography>
             </ListItemText>
           </ListItem>
         </List>

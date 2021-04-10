@@ -1,22 +1,18 @@
 import { Redirect, Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 import React from 'react';
-import { ExportApiPage } from './components/export-api/export-api-page';
+import { IntegrationPage } from './components/integration-page/integration-page';
 import { LibraryPage } from './components/library/library-page';
 
 export function Router() {
   return (
     <div>
       <Switch>
-        <Route exact path="/export-api">
-          <ExportApiPage />
-        </Route>
+        <Route exact path="/integration/:id" children={<IntegrationPage />} />
 
-        <Route exact path="/library">
-          <LibraryPage />
-        </Route>
+        <Route exact path="/library" children={<LibraryPage />} />
 
-        <Redirect from="/" to="/export-api" />
+        <Redirect from="/" to="/library" />
       </Switch>
     </div>
   );
